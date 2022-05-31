@@ -28,9 +28,10 @@ public class CalculatorTest {
 	public void testAdd() {
 		int a = 1234;
 		int b = 8765;
+		String msg = "";
 		
 		Calculator cal = new Calculator();
-		int actual = cal.add(a, b);
+		int actual = cal.add(a, b,msg);
 		
 		int expected = 9999;
 		assertEquals (expected,actual);
@@ -40,9 +41,10 @@ public class CalculatorTest {
 	public void testSubtract() {
 		int a = 9876;
 		int b = 4321;
+		String msg = "";
 		
 		Calculator cal = new Calculator();
-		int actual = cal.subtract(a, b);
+		int actual = cal.subtract(a, b,msg);
 		
 		int expected = 5555;
 		assertEquals (expected, actual);
@@ -52,9 +54,10 @@ public class CalculatorTest {
 	public void testMultiple() {
 		int a = 2;
 		int b = 5;
+		String msg = "";
 		
 		Calculator cal = new Calculator();
-		int actual = cal.multiple(a, b);
+		int actual = cal.multiple(a, b,msg);
 		
 		int expected = 10;
 		assertEquals (expected, actual);
@@ -64,9 +67,10 @@ public class CalculatorTest {
 	public void testDivide() {
 		int a = 10;
 		int b = 2;
+		String msg = "";
 		
 		Calculator cal = new Calculator();
-		int actual = cal.divide(a, b);
+		int actual = cal.divide(a, b,msg);
 		
 		int expected = 5;
 		assertEquals (expected, actual);
@@ -76,11 +80,27 @@ public class CalculatorTest {
 	public void NormalTestCaseNegative () {
 			int a = -10;
 			int b = -12;
+			String msg = "";
 			
 			Calculator cal = new Calculator ();
-			int actual = cal.add(a, b);
-			
+			int actual = cal.add(a, b, msg);
+			if(msg == "Success") {
 			assertEquals (-22 , actual);
+			}
+	}
+	
+	@Test
+	public void ErrorTestCase(){
+		int a = 1000;
+		int b = -12;
+		String msg = "";
+		
+		Calculator cal = new Calculator();
+		int actual = cal.add(a, b,msg);
+		if(msg == "Error") {
+			
+			assertEquals("Error", actual);
 		}
+	}
 	}
 
