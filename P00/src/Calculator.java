@@ -11,6 +11,14 @@ public int add(int a, int b, String message) {
 	return a + b;
 	}}
 
+public int add(int a, int b) {
+	return a + b;
+}
+
+public int subtract(int a, int b) {
+	return a - b;
+}
+
 public int subtract(int a, int b, String message) {
 	if(a > 999 || b > 999) {
 		message = "Error";
@@ -22,7 +30,7 @@ public int subtract(int a, int b, String message) {
 	}
 	}
 public int divide(int a, int b, String message) {
-	if(a > 999 || b > 999) {
+	if(a > 999 || a < -999 || b > 999 || b < -999) {
 		message = "Error";
 		return 0;
 	}
@@ -41,5 +49,7 @@ public int multiple(int a, int b , String message) {
 		message = "Success";
 	return a * b;
 	}
+	
+	
 }
 }
